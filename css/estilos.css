@@ -8,11 +8,10 @@
     --darkGrey: #343631;
 }
 /* ---- animation ---- */
-@keyframes subirSection{
-    from{top: 2000px}  
-    to{top: 0px}
+@keyframes arrow{
+    from{transform: translateY(15px)}  
+    to{transform: translateY(0)}
 }
-
 
 *{
     box-sizing: border-box;
@@ -115,6 +114,8 @@ nav ul{
     z-index: 250;
 }
 nav ul.open{
+    position: fixed;
+        top: 0;
     transform: translateY(0);
     transition: all .5s ease-in-out;
 }
@@ -147,13 +148,13 @@ nav ul li a{
 
 /* ---- inicio ---- */
 #inicio div{
-    /* background-color: var(--yellow); */
     display: flex;
         flex-direction: column;
         justify-content: center;
+    position: relative;
 }
 #inicio .nombre{
-    margin: 0 auto;
+    margin: 25% auto;
     width: 80%;
 }
 #inicio .nombre h1{
@@ -184,6 +185,35 @@ nav ul li a{
     font-weight: 400;
     margin-top: -2.5px;
 }
+#inicio .arrow{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    height: 50px;
+    margin: 0 auto;
+    position: absolute;
+        bottom: 7.5%; right: 40%;
+    width: 20%;
+}
+#inicio .material-icons{
+    color: var(--white);
+    font-size: 2.75rem;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+#inicio .arrow .material-icons:first-child{
+    animation: arrow .5s alternate infinite;
+    color: var(--white);
+    opacity: 0.5;
+    top: -10px;
+}
+#inicio .arrow .material-icons:last-child{
+    animation: arrow .5s alternate infinite;
+}
+#inicio .redes{
+    display: none;
+}
 
 /* ---- sobreMi ---- */
 #sobreMi{
@@ -196,8 +226,20 @@ nav ul li a{
 }
 
 /* ---- contacto ---- */
-#contacto{
-    
+#contacto div{
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+}
+#contacto div footer{
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+    height: 15vh;
+    text-align: center;
+}
+#contacto div footer .legales{
+    color: var(--white);
 }
 
 /* ---- responsive breakpoints ---- */
@@ -240,15 +282,36 @@ nav ul li a{
         margin: 2.5% 0 8%;
     }
     #inicio .nombre h2{
-        font-size: 3rem;
+        font-size: 2.82rem;
         font-weight: 600;
     }
     #inicio .nombre h2:nth-last-child(2){
-        font-size: 2.82rem;
+        font-weight: 700;
     }
     #inicio .nombre p{
         font-size: 1.5rem;
         padding-right: 2px;
         text-align: right;
+    }
+    #inicio .redes{
+        display: flex;
+            justify-content: flex-end;
+        margin: 0 auto;
+        position: absolute;
+            bottom: 8.5%; right: 10%;
+        width: 80%;
+    }
+    #inicio .redes a{
+        margin-left: 2.5%;
+    }
+    #inicio .redes i{
+        color: var(--white);
+        font-size: 1.5rem;
+        transition: all .25s ease-in-out;
+    }
+    #inicio .redes a:hover i{
+        color: var(--darkGrey);
+        transform: scale(1.15);
+        transition: all .25s ease-in-out;
     }
 }
