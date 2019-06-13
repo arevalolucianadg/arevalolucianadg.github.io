@@ -32,17 +32,17 @@
     </div>
   
     <nav>
-      <ul>
+      <ul id="menu">
         <li>
           <a href="#inicio" title="Inicio">inicio</a>
         </li>
         <li>
           <a href="#sobreMi" title="Sobre Mí">sobre mí</a>
         </li>
-        <li d>
+        <li>
           <a href="#proyectos" title="Proyectos">proyectos</a>
         </li>
-        <li >
+        <li>
           <a href="#contacto" title="Contacto">contacto</a>
         </li>
       </ul>
@@ -91,10 +91,6 @@
       $('.icon-menu').toggleClass('animate');
       $('nav ul').toggleClass('open');
     });
-    $('nav ul li').on('click', function(){
-      $('.icon-menu').toggleClass('animate');
-      $('nav ul').toggleClass('open');
-    });
 
     // ataredo.com/morphology/lucidscroll - documentation
 
@@ -105,14 +101,14 @@
       items = $('section'),
       mid, intent;
 
-      // keeping track of mousewheel direction
+      // keeping track of mousewheel direction | realizar un seguimiento de la dirección de la rueda del ratón
 
       gate.on('wheel', function(e) {
 
         intent = e.originalEvent.deltaY;
       })
 
-      // highlight the item currently in view by adding classes
+      // highlight the item currently in view by adding classes | resalte el elemento actualmente en vista agregando clases
 
       .resize(function() {
 
@@ -137,7 +133,7 @@
         });
       })
 
-      // this is where the magic happens
+      // this is where the magic happens | aquí es donde ocurre la magia
 
       .scroll().impulse({
 
@@ -145,7 +141,7 @@
         delay: true
       });
 
-      // calculate the position of the page section
+      // calculate the position of the page section | Calcular la posición de la sección de la página.
 
       function findMark() {
 
@@ -156,9 +152,13 @@
         return Math.abs(aim.offset().top-gate.scrollTop());
       }
 
-      // using the plugin to animate anchor links
+      // using the plugin to animate anchor links | usando el plugin para animar enlaces de anclaje
 
       elicit.click(function() {
+        
+        // cerrar menu desde li
+        $('.icon-menu').toggleClass('animate');
+        $('nav ul').toggleClass('open');
 
         var plan = $(this.hash).offset().top-gate.scrollTop(),
         jump = 0.7*Math.abs(plan); // creates constant speed
