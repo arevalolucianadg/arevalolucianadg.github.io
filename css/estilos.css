@@ -255,10 +255,11 @@ nav ul li a{
     #icon-wrapper{
         display: none;
     }
-    nav ul{
+    nav ul, nav ul.open{
         background-color: transparent;
         flex-direction: row;
         justify-content: flex-end;
+        position: relative;
         transform: translateY(0);
     }
     nav ul li{
