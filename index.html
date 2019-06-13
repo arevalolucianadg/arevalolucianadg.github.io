@@ -12,60 +12,122 @@
 <body>
 
   <header>
-    <nav>
-      <div id="icon-wrapper">
+    <div class="header-top">
+      <a id="icon-wrapper" class="toggle-menu" href="#">
         <div class="icon">
           <div class="icon-menu"></div>
         </div>
-      </div>
+      </a>
+    </div>
+  
+    <nav class="hide">
       <ul>
-        <li class="listItem"><a data-scroll href="#inicio">inicio</a></li>
-        <li class="listItem"><a data-scroll href="#sobreMi">sobre mí</a></li>
-        <li class="listItem"><a data-scroll href="#proyectos">proyectos</a></li>
-        <li class="listItem"><a data-scroll href="#contacto">contacto</a></li>
+        <li data-menuanchor="inicio">
+          <a href="#inicio" title="Inicio">inicio</a>
+        </li>
+        <li data-menuanchor="sobreMi">
+          <a href="#sobreMi" title="Sobre Mí">sobre mí</a>
+        </li>
+        <li data-menuanchor="proyectos">
+          <a href="#proyectos" title="Proyectos">proyectos</a>
+        </li>
+        <li data-menuanchor="contacto">
+          <a href="#contacto" title="Contacto">contacto</a>
+        </li>
       </ul>
     </nav>
   </header>
-
-  <section class="fullpage">
-    <section id="inicio" class="slide">
-      <section class="nombre">
-        <h1>Luciana Arévalo</h1>
-        <h2>Diseñadora gráfica &</h2>
-        <h2>Desarrolladora Front End</h2>
-        <p>en progreso</p>
-      </section>
-      <section class="redes"></section>
+  
+  <div id="fullpage">
+    <section id="inicio" class="vertical-scrolling">
+      <h2>fullPage.js</h2>
+      <h3>This is the first section</h3>
+      <div class="scroll-icon">
+        <p>Jump into the last slide</p>
+        <a href="#fifthSection/1" class="icon-up-open-big"></a>
+      </div>
     </section>
-    <section id="sobreMi" class="slide"></section>
-    <section id="proyectos" class="slide"></section>
-    <section id="contacto" class="slide"></section>
-  </section>
+    <section id="sobreMi" class="vertical-scrolling">
+      <h2>fullPage.js</h2>
+      <h3>This is the second section</h3>
+    </section>
+    <section id="proyectos" class="vertical-scrolling">
+      <h2>fullPage.js</h2>
+      <h3>This is the third section</h3>
+    </section>
+    <section id="contacto" class="vertical-scrolling">
+      <h2>fullPage.js</h2> 
+      <h3>This is the fourth section</h3>
+    </section>
+  </div>
 
   <script src="js/jquery-3.4.1.slim.min.js"></script>
-  <script src="js/smooth-scroll.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
+  <!-- <script src="js/smooth-scroll.js"></script> -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() 
-    {
-      // menu
-      $("#icon-wrapper").on("click", function(){
-        $(".icon-menu").toggleClass("animate");
-        $("nav ul").toggleClass("open");
-      });
 
-      $("nav ul li a").on("click", function(){
-        $(".icon-menu").toggleClass("animate");
-        $("nav ul").toggleClass("open");
-        var sectionSelect = $(this).attr("href");
-        $(sectionSelect).addClass("topSection");
-      });
-      
-      // smoothScroll JS
-      var scroll = new SmoothScroll('a[href*="#"]');
+// variables
+var $header_top = $('.header-top');
+var $nav = $('nav');
 
-      });
+// toggle menu 
+$('#icon-wrapper').on('click', function(){
+  $('nav ul').toggleClass('open');
+  $('.icon-menu').toggleClass('animate');
+});
 
+// fullpage customization
+$('#fullpage').fullpage({
+  sectionsColor: ['#FFC201', '#14A697', '#343631', '#14A697'],
+  sectionSelector: '.vertical-scrolling',
+  slideSelector: '.horizontal-scrolling',
+  navigation: true,
+  slidesNavigation: true,
+  controlArrows: false,
+  anchors: ['inicio', 'sobreMi', 'proyectos', 'contacto'],
+  menu: '#menu',
+
+  afterLoad: function(anchorLink, index) {
+    // $header_top.css('background', 'rgba(0, 47, 77, .3)');
+    // $nav.css('background', 'rgba(0, 47, 77, .25)');
+    if (index == 4) {
+        $('#fp-nav').hide();
+      }
+  },
+
+  onLeave: function(index, nextIndex, direction) {
+    if(index == 5) {
+      $('#fp-nav').show();
+    }
+  },
+
+  afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+      $.fn.fullpage.setAllowScrolling(false, 'up');
+      $header_top.css('background', 'transparent');
+      $nav.css('background', 'transparent');
+      $(this).css('background', '#374140');
+      $(this).find('h2').css('color', 'white');
+      $(this).find('h3').css('color', 'white');
+      $(this).find('p').css(
+        {
+          'color': '#DC3522',
+          'opacity': 1,
+          'transform': 'translateY(0)'
+        }
+      );
+    }
+  },
+
+  onSlideLeave: function( anchorLink, index, slideIndex, direction) {
+    if(anchorLink == 'fifthSection' && slideIndex == 1) {
+      $.fn.fullpage.setAllowScrolling(true, 'up');
+      $header_top.css('background', 'rgba(0, 47, 77, .3)');
+      $nav.css('background', 'rgba(0, 47, 77, .25)');
+    }
+  } 
+}); 
     
   </script>
 
