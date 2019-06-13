@@ -22,16 +22,16 @@
   
     <nav class="hide">
       <ul>
-        <li data-menuanchor="inicio">
+        <li data-menuanchor="inicioSection">
           <a href="#inicio" title="Inicio">inicio</a>
         </li>
-        <li data-menuanchor="sobreMi">
+        <li data-menuanchor="sobreMiSection">
           <a href="#sobreMi" title="Sobre Mí">sobre mí</a>
         </li>
-        <li data-menuanchor="proyectos">
+        <li data-menuanchor="proyectosSection">
           <a href="#proyectos" title="Proyectos">proyectos</a>
         </li>
-        <li data-menuanchor="contacto">
+        <li data-menuanchor="contactoSection">
           <a href="#contacto" title="Contacto">contacto</a>
         </li>
       </ul>
@@ -40,24 +40,22 @@
   
   <div id="fullpage">
     <section id="inicio" class="vertical-scrolling">
-      <h2>fullPage.js</h2>
-      <h3>This is the first section</h3>
-      <div class="scroll-icon">
-        <p>Jump into the last slide</p>
-        <a href="#fifthSection/1" class="icon-up-open-big"></a>
-      </div>
+      <section class="nombre">
+        <h1>Luciana Arévalo</h1>
+        <h2>Diseñadora gráfica</h2>
+        <h2>Desarrolladora Front End</h2>
+        <p>en progreso</p>
+      </section>
+      <section class="redes"></section>
     </section>
     <section id="sobreMi" class="vertical-scrolling">
-      <h2>fullPage.js</h2>
-      <h3>This is the second section</h3>
+      
     </section>
     <section id="proyectos" class="vertical-scrolling">
-      <h2>fullPage.js</h2>
-      <h3>This is the third section</h3>
+      
     </section>
     <section id="contacto" class="vertical-scrolling">
-      <h2>fullPage.js</h2> 
-      <h3>This is the fourth section</h3>
+      
     </section>
   </div>
 
@@ -67,12 +65,12 @@
 
   <script>
 
-// variables
-var $header_top = $('.header-top');
-var $nav = $('nav');
-
 // toggle menu 
 $('#icon-wrapper').on('click', function(){
+  $('nav ul').toggleClass('open');
+  $('.icon-menu').toggleClass('animate');
+});
+$('nav ul li').on('click', function(){
   $('nav ul').toggleClass('open');
   $('.icon-menu').toggleClass('animate');
 });
@@ -85,49 +83,50 @@ $('#fullpage').fullpage({
   navigation: true,
   slidesNavigation: true,
   controlArrows: false,
-  anchors: ['inicio', 'sobreMi', 'proyectos', 'contacto'],
+  anchors: ['inicioSection', 'sobreMiSection', 'proyectosSection', 'contactoSection'],
   menu: '#menu',
+});
 
-  afterLoad: function(anchorLink, index) {
-    // $header_top.css('background', 'rgba(0, 47, 77, .3)');
-    // $nav.css('background', 'rgba(0, 47, 77, .25)');
-    if (index == 4) {
-        $('#fp-nav').hide();
-      }
-  },
+  // afterLoad: function(anchorLink, index) {
+  //   // $header_top.css('background', 'rgba(0, 47, 77, .3)');
+  //   // $nav.css('background', 'rgba(0, 47, 77, .25)');
+  //   if (index == 4) {
+  //       $('#fp-nav').hide();
+  //     }
+  // },
 
-  onLeave: function(index, nextIndex, direction) {
-    if(index == 5) {
-      $('#fp-nav').show();
-    }
-  },
+  // onLeave: function(index, nextIndex, direction) {
+  //   if(index == 5) {
+  //     $('#fp-nav').show();
+  //   }
+  // },
 
-  afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
-    if(anchorLink == 'fifthSection' && slideIndex == 1) {
-      $.fn.fullpage.setAllowScrolling(false, 'up');
-      $header_top.css('background', 'transparent');
-      $nav.css('background', 'transparent');
-      $(this).css('background', '#374140');
-      $(this).find('h2').css('color', 'white');
-      $(this).find('h3').css('color', 'white');
-      $(this).find('p').css(
-        {
-          'color': '#DC3522',
-          'opacity': 1,
-          'transform': 'translateY(0)'
-        }
-      );
-    }
-  },
+//   afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex) {
+//     if(anchorLink == 'inicio' && slideIndex == 1) {
+//       $.fn.fullpage.setAllowScrolling(false, 'up');
+//       $header_top.css('background', 'transparent');
+//       $nav.css('background', 'transparent');
+//       $(this).css('background', '#374140');
+//       $(this).find('h2').css('color', 'white');
+//       $(this).find('h3').css('color', 'white');
+//       $(this).find('p').css(
+//         {
+//           'color': '#DC3522',
+//           'opacity': 1,
+//           'transform': 'translateY(0)'
+//         }
+//       );
+//     }
+//   },
 
-  onSlideLeave: function( anchorLink, index, slideIndex, direction) {
-    if(anchorLink == 'fifthSection' && slideIndex == 1) {
-      $.fn.fullpage.setAllowScrolling(true, 'up');
-      $header_top.css('background', 'rgba(0, 47, 77, .3)');
-      $nav.css('background', 'rgba(0, 47, 77, .25)');
-    }
-  } 
-}); 
+//   onSlideLeave: function( anchorLink, index, slideIndex, direction) {
+//     if(anchorLink == 'fifthSection' && slideIndex == 1) {
+//       $.fn.fullpage.setAllowScrolling(true, 'up');
+//       $header_top.css('background', 'rgba(0, 47, 77, .3)');
+//       $nav.css('background', 'rgba(0, 47, 77, .25)');
+//     }
+//   } 
+// }); 
     
   </script>
 
