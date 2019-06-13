@@ -28,7 +28,7 @@ header{
     width: 100%;
 }
 nav{
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
 }
 .header-top{
@@ -303,7 +303,10 @@ nav ul li a{
         width: 80%;
     }
     #inicio .redes a{
+        color: var(--darkGrey);
+        font-weight: 600;
         margin-left: 2.5%;
+        text-decoration: none;
     }
     #inicio .redes i{
         color: var(--white);
