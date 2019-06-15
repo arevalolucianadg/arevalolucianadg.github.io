@@ -1,5 +1,8 @@
-# arevalolucianadg.github.io
-Portfolio personal
+# Luciana Arévalo
+### Diseñadora gráfica & Desarrolladora Front End
+##### Portfolio personal
+:warning: :rocket: En proceso de desarrollo.
 
-# Vista ONLINE
+>
+##### Vista ONLINE
 https://arevalolucianadg.github.io/
