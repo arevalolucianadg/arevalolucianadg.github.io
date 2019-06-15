@@ -30,7 +30,7 @@
         </div>
       </a>
     </div>
-  
+    <!-- menu -->
     <nav>
       <ul id="menu">
         <li>
@@ -48,8 +48,9 @@
       </ul>
     </nav>
   </header>
-  
+  <!-- secciones -->
   <div class="sections">
+    <!-- inicio -->
     <section id="inicio" class="vertical-scrolling">
       <section class="nombre">
         <h1>Luciana Arévalo</h1>
@@ -68,107 +69,26 @@
           <a href="https://www.behance.net/arevalolucianadg" target="_blank"><i class="fab fa-behance"></i></a>
       </section>
     </section>
+    <!-- sobre mi -->
     <section id="sobreMi" class="vertical-scrolling">
       
     </section>
+    <!-- proyectos -->
     <section id="proyectos" class="vertical-scrolling">
       
     </section>
+    <!-- contacto -->
     <section id="contacto" class="vertical-scrolling">
       <footer>
         <section class="legales">Arévalo Luciana | 2019</section>
       </footer>
     </section>
   </div>
-
+  
   <script src="js/jquery.min.js"></script>
-  <script src="js/fullscreenAnimated.js"></script>
+  <script src="js/fullscreenAnimated.min.js"></script>
+  <script src="js/fullscreenConfig.min.js"></script>
   <script src="https://kit.fontawesome.com/9db69aa1a4.js"></script>
-
-  <script>
-    // menu toggle
-    $('#icon-wrapper').on('click', function(){
-      $('.icon-menu').toggleClass('animate');
-      $('nav ul').toggleClass('open');
-    });
-
-    // ataredo.com/morphology/lucidscroll - documentation
-
-      $(function() {
-
-      var gate = $(window),
-      elicit = $('nav a'),
-      items = $('section'),
-      mid, intent;
-
-      // keeping track of mousewheel direction | realizar un seguimiento de la dirección de la rueda del ratón
-
-      gate.on('wheel', function(e) {
-
-        intent = e.originalEvent.deltaY;
-      })
-
-      // highlight the item currently in view by adding classes | resalte el elemento actualmente en vista agregando clases
-
-      .resize(function() {
-
-        mid = gate.height()/2;
-      })
-      .resize().scroll(function() {
-
-        items.each(function() {
-
-          var edges = this.getBoundingClientRect(),
-          apex = edges.top, nadir = edges.bottom;
-
-          if (apex < mid && nadir > mid) $(this).addClass('active');
-          else $(this).removeClass('active');
-
-          var busy = $('.active');
-
-          if (!busy[0]) return;
-
-          $('.vivid').removeClass('vivid');
-          $('[href="#' + busy[0].id + '"]').addClass('vivid');
-        });
-      })
-
-      // this is where the magic happens | aquí es donde ocurre la magia
-
-      .scroll().impulse({
-
-        range: findMark,
-        delay: true
-      });
-
-      // calculate the position of the page section | Calcular la posición de la sección de la página.
-
-      function findMark() {
-
-        if (intent > 0) var aim = $('.active').next('section');
-        else aim = $('.active').prev('section');
-        if (!aim.length) return 0;
-
-        return Math.abs(aim.offset().top-gate.scrollTop());
-      }
-
-      // using the plugin to animate anchor links | usando el plugin para animar enlaces de anclaje
-
-      elicit.click(function() {
-        
-        // cerrar menu desde li
-        $('.icon-menu').toggleClass('animate');
-        $('nav ul').toggleClass('open');
-
-        var plan = $(this.hash).offset().top-gate.scrollTop(),
-        jump = 0.7*Math.abs(plan); // creates constant speed
-
-        gate.demit().evoke({range: plan, tempo: jump});
-
-        return false;
-      });
-      });
-  </script>
 
 </body>
 </html>
