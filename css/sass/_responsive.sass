@@ -1,0 +1,76 @@
+/* ---- responsive breakpoints ---- */
+@media (min-width: 1024px)
+    nav
+        height: 12.5vh
+        margin: 0 auto
+        position: fixed
+        top: 0
+        left: 10%
+        width: 80%
+        z-index: 500
+    
+    #icon-wrapper
+        display: none
+    
+    nav ul, nav ul.open
+        background-color: transparent
+        flex-direction: row
+        justify-content: flex-end
+        position: relative
+        transform: translateY(0)
+    
+    nav ul li
+        display: flex
+        flex-direction: column
+        justify-content: center
+        margin: 0 0 0 5%
+    
+    nav ul li a
+        font-size: 1rem
+    
+    #inicio .nombre
+        margin: 0 auto 0 10%
+        width: 40%
+    
+    #inicio .nombre h1
+        font-size: 4.5rem
+    
+    #inicio .nombre h1::after
+        height: 4px
+        margin: 2.5% 0 8%
+    
+    #inicio .nombre h2
+        font-size: 2.78rem
+        font-weight: 600
+    
+    #inicio .nombre p
+        font-size: 1.5rem
+        padding-right: 3px
+        text-align: right
+    
+    #inicio .redes
+        display: flex
+        justify-content: flex-end
+        margin: 0 auto
+        position: absolute
+        bottom: 8.5% 
+        right: 10%
+        width: 80%
+    
+    #inicio .redes a
+        color: var(--darkGrey)
+        font-weight: 600
+        margin-left: 2.5%
+        text-decoration: none
+    
+    #inicio .redes i
+        color: var(--white)
+        font-size: 1.5rem
+        font-weight: normal
+        transition: all .25s ease-in-out
+    
+    #inicio .redes a:hover i
+        color: var(--darkGrey)
+        transform: scale(1.15)
+        transition: all .25s ease-in-out
+    

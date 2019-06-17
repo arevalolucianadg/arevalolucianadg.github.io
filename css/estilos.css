@@ -281,7 +281,7 @@ nav ul li a{
         margin: 2.5% 0 8%;
     }
     #inicio .nombre h2{
-        font-size: 2.82rem;
+        font-size: 2.78rem;
         font-weight: 600;
     }
     #inicio .nombre h2:nth-last-child(2){
@@ -289,7 +289,7 @@ nav ul li a{
     }
     #inicio .nombre p{
         font-size: 1.5rem;
-        padding-right: 2px;
+        padding-right: 3px;
         text-align: right;
     }
     #inicio .redes{
@@ -309,6 +309,7 @@ nav ul li a{
     #inicio .redes i{
         color: var(--white);
         font-size: 1.5rem;
+        font-weight: normal;
         transition: all .25s ease-in-out;
     }
     #inicio .redes a:hover i{

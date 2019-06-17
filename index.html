@@ -6,18 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Arévalo Luciana. Diseñadora gráfica & desarrolladora Front End | Portfolio </title>
   
-  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142060102-1"></script>
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142060102-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'UA-142060102-1');
-  </script>
+  </script> -->
 
 </head>
 <body>
@@ -26,7 +26,7 @@
     <div class="header-top">
       <a id="icon-wrapper">
         <div class="icon">
-          <div class="icon-menu"></div>
+          <div id="icon-menu" class="icon-menu"></div>
         </div>
       </a>
     </div>
@@ -34,16 +34,16 @@
     <nav>
       <ul id="menu">
         <li>
-          <a href="#inicio" title="Inicio">inicio</a>
+          <a data-smooth-scroll href="#inicio" title="Inicio">inicio</a>
         </li>
         <li>
-          <a href="#sobreMi" title="Sobre Mí">sobre mí</a>
+          <a data-smooth-scroll href="#sobreMi" title="Sobre Mí">sobre mí</a>
         </li>
         <li>
-          <a href="#proyectos" title="Proyectos">proyectos</a>
+          <a data-smooth-scroll href="#proyectos" title="Proyectos">proyectos</a>
         </li>
         <li>
-          <a href="#contacto" title="Contacto">contacto</a>
+          <a data-smooth-scroll href="#contacto" title="Contacto">contacto</a>
         </li>
       </ul>
     </nav>
@@ -85,10 +85,38 @@
     </section>
   </div>
   
-  <script src="js/jquery.min.js"></script>
-  <script src="js/fullscreenAnimated.min.js"></script>
-  <script src="js/fullscreenConfig.min.js"></script>
   <script src="https://kit.fontawesome.com/9db69aa1a4.js"></script>
+  <script src="js/smooth-scroll.min.js"></script>
+
+  <script>
+    // menu
+    var iconWrapper = document.getElementById("icon-wrapper");
+    var iconMenu = document.getElementById("icon-menu");
+    var menu = document.getElementById("menu");
+    var itemsMenu = menu.getElementsByTagName("li");
+
+    function openMenu(){
+      iconMenu.classList.toggle("animate");
+      menu.classList.toggle("open");
+      }
+        iconWrapper.onclick = function() {
+          openMenu();
+        }
+        for(i = 0; i < itemsMenu.length; i++){
+            var item = itemsMenu[i];
+            item.onclick = function() {
+              openMenu();
+            }
+          };
+
+
+    // smooth scroll JS
+    new Smoothscroll({
+        duration: 500, 
+        easing: 'easeInOutQuad'
+    })
+  </script>
+
 
 </body>
 </html>
