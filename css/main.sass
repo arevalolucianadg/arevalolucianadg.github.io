@@ -2,6 +2,14 @@
 
 /* ---- animation ---- */
 
+@keyframes upLink
+    from
+        opacity: 0
+        transform: translateY(20px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
 *
     box-sizing: border-box
     margin: 0
@@ -10,6 +18,9 @@
 body
     font-family: 'Source Sans Pro', sans-serif
     font-size: 16px
+
+a
+    text-decoration: none
 
 /* ---- header ---- */
 nav
@@ -35,7 +46,7 @@ nav
                 height: auto
                 width: 60%
     
-    div.icon-wrapper
+    div#icon-wrapper
         align-items: center
         cursor: pointer
         display: flex
@@ -46,66 +57,216 @@ nav
         right: 5%
         top: 0
         width: 60px
+        z-index: 500
 
         .icon, .icon:before, .icon:after
             background: $lightGrey
             content: ""
             height: 2.95px
             position: absolute
+            transition: all .5s ease
             width: 30px
+
+        &:hover
+            .icon
+                &:before
+                    top: -7.5px
+                    transition: all .25s ease
+                &:after
+                    top: 7.5px
+                    transition: all .25s ease
         
         .icon
             &:before
                 top: -10px
+                transition: all .5s ease
             
             &:after
                 top: 10px
+                transition: all .5s ease
+
+            &.animate
+                transition: all .5s ease
+                height: 0
+
+                &:before, &:after
+                    background-color: $white
+                    transition: all .5s ease
+
+                &:before 
+                    top: 10px
+                    transform: rotate(45deg)
+                    transition: all .5s ease
+                
+                &:after
+                    top: 10px
+                    transform: rotate(-45deg)
+                    transition: all .5s ease
                 
 
-    ul.menu
-        display: none
+    ul#menu
+        align-items: center
+        background: $gradRed
+        display: flex 
+        flex-direction: column
+        height: 100vh
+        justify-content: center
+        left: 0
+        overflow: hidden
+        position: absolute
+        top: 0
+        transform: translateX(100%)
+        transition: all .75s ease
+        width: 100%
+        z-index: 150
+
+        .text
+            animation: upLink 1s ease 2s
+            color: $white
+            font-size: 0.8rem
+            font-weight: 600
+            letter-spacing: 12px
+            position: relative
+            top: -80px
+            text-transform: uppercase
+
+            &:before, &:after
+                content: ""
+                background: $white
+                height: 1px
+                position: absolute
+                top: 8px
+                width: 50vw
+
+            &:before
+                left: -230%
+            &:after
+                right: -220%
+
+        li
+            animation: upLink 1s ease 2s
+            list-style-type: none
+            margin: 10px 0
+            opacity: 1
+            transition: all .75s ease
+
+            a
+                color: $white
+                font-size: 2rem
+                font-weight: 600
+    
+        &.open
+            box-shadow: 0px 3px 9px -1px rgba(112,112,112,0.5)
+            transform: translateX(0%)
+            transition: all .75s ease
 
 
 /* ---- home ---- */
-section.nombre
+main
+    align-items: center
     display: flex
     flex-direction: column
     justify-content: center
-    height: 100vh
-    left: 10%
+    height: calc(100vh - 60px)
+    overflow: hidden
     position: relative
-    width: 80%
+    top: 60px
 
-    h1
-        color: $black
+    section.nombre
         display: flex
         flex-direction: column
-        font-size: 2.25em
         justify-content: center
-        margin-bottom: 10px
-        position: relative
+        height: 50vh
+        margin: 0 auto
+        position: absolute
+        width: 80%
+        z-index: 50
 
-        &:before
-            background: $green
-            content: ""
-            height: 10px
-            left: -40px
+        h1
+            color: $black
+            display: flex
+            flex-direction: column
+            font-size: 2.25em
+            justify-content: center
+            margin-bottom: 10px
+            position: relative
+
+            &:before
+                background: $white
+                content: ""
+                height: 180px
+                left: -20px
+                opacity: .9
+                position: absolute
+                top: -20px
+                width: 290px
+                z-index: -5
+        
+        h2
+            color: $lightGrey 
+            font-size: 1.5rem
+            font-weight: 300
+        
+        p.detalle
+            color: $lightGrey
+            font-weight: 300
+
+    button.btn 
+        border: none
+        cursor: pointer
+        font-family: 'Source Sans Pro', sans-serif
+        font-size: 1rem 
+        font-weight: 700
+        letter-spacing: 6px
+        margin: 0 auto
+        padding: .5rem
+        transition: all .5s ease
+        width: 150px
+
+        &.cv
+            background: $yellow
+            background: $gradYellow
+            color: $white
+            margin-top: 50px
+            text-transform: uppercase
+            transition: all .5s ease
+        
+        &:hover
+            background: $red
+            box-shadow: 0px 0px 10px -1px rgba(121,32,132,.5)
+            color: $white
+            transition: all .5s ease
+
+        &:focus
+            outline: none
+
+    section.portada
+        border-radius: 5px
+        height: 70vh
+        margin: 0 auto
+        position: absolute
+        right: 20px
+        top: 50px
+        width: 55%
+
+        .img-wrapper
+            height: 100%
+            width: 100%
+
+            img
+                height: 100%
+        
+        .bg-img
+            background: $gradRed
+            height: 100%
+            opacity: .85
             position: absolute
-            width: 30px
-    
-    h2
-        color: $lightGrey 
-        font-size: 1.5rem
-        font-weight: 300
-    
-    p.detalle
-        color: $lightGrey
-        font-weight: 300
+            top: 0
+            width: 150%
+                
 
-section.portada
-
-section.sidebar
-    display: none
+    section.sidebar
+        display: none
 
 /* ---- sobreMi ---- */
 
@@ -120,5 +281,29 @@ section.sidebar
   
 
 /* ---- responsive breakpoints ---- */
+@media (min-width: 1024px)
+    main 
+        section.nombre 
+            left: 10%
+            width: 40%
 
+            h1 
+                font-size: 4rem
+            
+            h2 
+                font-size: 2.7rem
+
+            .detalle
+                font-size: 1.5rem
+
+            .btn
+
+                .cv
+                    position: relative
+                    top: 50px
+
+        section.portada 
+            height: 90vh
+            right: 7.5%
+            width: 33%
    

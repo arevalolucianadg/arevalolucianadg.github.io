@@ -28,10 +28,11 @@
           <img src="img/logo.svg" alt="Logo personal">
         </a>
       </section>
-      <div class="icon-wrapper">
-        <div class="icon"></div>
+      <div id="icon-wrapper">
+        <div id="icon" class="icon"></div>
       </div>
-      <ul class="menu">
+      <ul id="menu">
+        <p class="text">Menú</p>
         <li><a href="index.html">Inicio</a></li>
         <li><a href="proyectos.html">Proyectos</a></li>
       </ul>
@@ -42,14 +43,33 @@
       <h1>Luciana Arévalo</h1>
       <h2>Diseñadora gráfica & <br> Desarrolladora Front End</h2>
       <p class="detalle">en progreso</p>
+      <button class="btn cv">Ver CV</button>
     </section>
-    <section class="portada"></section>
+    <section class="portada">
+      <div class="img-wrapper">
+        <img src="img/portada.png" alt="">
+      </div>
+      <div class="bg-img"></div>
+    </section>
     <section class="sidebar"></section>
   </main>
   
   <!-- script -->
   <script src="https://kit.fontawesome.com/9db69aa1a4.js"></script>
   
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      var iconWrapper = document.getElementById("icon-wrapper"),
+          icon = document.getElementById("icon"),
+          menu = document.getElementById("menu");
+
+      iconWrapper.onclick = function () {
+        icon.classList.toggle("animate");
+        menu.classList.toggle("open");
+      }
+    });
+  </script>
 
 </body>
 </html>

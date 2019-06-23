@@ -1,5 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
 /* ---- animation ---- */
+@-webkit-keyframes upLink {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+@keyframes upLink {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -10,6 +35,10 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* ---- header ---- */
@@ -45,7 +74,7 @@ nav section.logo-wrapper a img {
   width: 60%;
 }
 
-nav div.icon-wrapper {
+nav div#icon-wrapper {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -65,30 +94,158 @@ nav div.icon-wrapper {
   right: 5%;
   top: 0;
   width: 60px;
+  z-index: 500;
 }
 
-nav div.icon-wrapper .icon, nav div.icon-wrapper .icon:before, nav div.icon-wrapper .icon:after {
+nav div#icon-wrapper .icon, nav div#icon-wrapper .icon:before, nav div#icon-wrapper .icon:after {
   background: #707070;
   content: "";
   height: 2.95px;
   position: absolute;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   width: 30px;
 }
 
-nav div.icon-wrapper .icon:before {
+nav div#icon-wrapper:hover .icon:before {
+  top: -7.5px;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+nav div#icon-wrapper:hover .icon:after {
+  top: 7.5px;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+nav div#icon-wrapper .icon:before {
   top: -10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-nav div.icon-wrapper .icon:after {
+nav div#icon-wrapper .icon:after {
   top: 10px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-nav ul.menu {
-  display: none;
+nav div#icon-wrapper .icon.animate {
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  height: 0;
+}
+
+nav div#icon-wrapper .icon.animate:before, nav div#icon-wrapper .icon.animate:after {
+  background-color: #FFFFFF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav div#icon-wrapper .icon.animate:before {
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav div#icon-wrapper .icon.animate:after {
+  top: 10px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav ul#menu {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: linear-gradient(135deg, #e62048 0%, #792084 100%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: all .75s ease;
+  transition: all .75s ease;
+  width: 100%;
+  z-index: 150;
+}
+
+nav ul#menu .text {
+  -webkit-animation: upLink 1s ease 2s;
+          animation: upLink 1s ease 2s;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 12px;
+  position: relative;
+  top: -80px;
+  text-transform: uppercase;
+}
+
+nav ul#menu .text:before, nav ul#menu .text:after {
+  content: "";
+  background: #FFFFFF;
+  height: 1px;
+  position: absolute;
+  top: 8px;
+  width: 50vw;
+}
+
+nav ul#menu .text:before {
+  left: -230%;
+}
+
+nav ul#menu .text:after {
+  right: -220%;
+}
+
+nav ul#menu li {
+  -webkit-animation: upLink 1s ease 2s;
+          animation: upLink 1s ease 2s;
+  list-style-type: none;
+  margin: 10px 0;
+  opacity: 1;
+  -webkit-transition: all .75s ease;
+  transition: all .75s ease;
+}
+
+nav ul#menu li a {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+nav ul#menu.open {
+  -webkit-box-shadow: 0px 3px 9px -1px rgba(112, 112, 112, 0.5);
+          box-shadow: 0px 3px 9px -1px rgba(112, 112, 112, 0.5);
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all .75s ease;
+  transition: all .75s ease;
 }
 
 /* ---- home ---- */
-section.nombre {
+main {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -99,13 +256,31 @@ section.nombre {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 100vh;
-  left: 10%;
+  height: calc(100vh - 60px);
+  overflow: hidden;
   position: relative;
-  width: 80%;
+  top: 60px;
 }
 
-section.nombre h1 {
+main section.nombre {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50vh;
+  margin: 0 auto;
+  position: absolute;
+  width: 80%;
+  z-index: 50;
+}
+
+main section.nombre h1 {
   color: #252525;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,27 +297,95 @@ section.nombre h1 {
   position: relative;
 }
 
-section.nombre h1:before {
-  background: #24a698;
+main section.nombre h1:before {
+  background: #FFFFFF;
   content: "";
-  height: 10px;
-  left: -40px;
+  height: 180px;
+  left: -20px;
+  opacity: .9;
   position: absolute;
-  width: 30px;
+  top: -20px;
+  width: 290px;
+  z-index: -5;
 }
 
-section.nombre h2 {
+main section.nombre h2 {
   color: #707070;
   font-size: 1.5rem;
   font-weight: 300;
 }
 
-section.nombre p.detalle {
+main section.nombre p.detalle {
   color: #707070;
   font-weight: 300;
 }
 
-section.sidebar {
+main button.btn {
+  border: none;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin: 0 auto;
+  padding: .5rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  width: 150px;
+}
+
+main button.btn.cv {
+  background: #febb2a;
+  background: linear-gradient(135deg, #febb2a 0%, #e85b27 100%);
+  color: #FFFFFF;
+  margin-top: 50px;
+  text-transform: uppercase;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main button.btn:hover {
+  background: #E62048;
+  -webkit-box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
+          box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
+  color: #FFFFFF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main button.btn:focus {
+  outline: none;
+}
+
+main section.portada {
+  border-radius: 5px;
+  height: 70vh;
+  margin: 0 auto;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  width: 55%;
+}
+
+main section.portada .img-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
+main section.portada .img-wrapper img {
+  height: 100%;
+}
+
+main section.portada .bg-img {
+  background: linear-gradient(135deg, #e62048 0%, #792084 100%);
+  height: 100%;
+  opacity: .85;
+  position: absolute;
+  top: 0;
+  width: 150%;
+}
+
+main section.sidebar {
   display: none;
 }
 
@@ -150,4 +393,28 @@ section.sidebar {
 /* ---- proyectos ---- */
 /* ---- contacto ---- */
 /* ---- responsive breakpoints ---- */
+@media (min-width: 1024px) {
+  main section.nombre {
+    left: 10%;
+    width: 40%;
+  }
+  main section.nombre h1 {
+    font-size: 4rem;
+  }
+  main section.nombre h2 {
+    font-size: 2.7rem;
+  }
+  main section.nombre .detalle {
+    font-size: 1.5rem;
+  }
+  main section.nombre .btn .cv {
+    position: relative;
+    top: 50px;
+  }
+  main section.portada {
+    height: 90vh;
+    right: 7.5%;
+    width: 33%;
+  }
+}
 /*# sourceMappingURL=main.css.map */
