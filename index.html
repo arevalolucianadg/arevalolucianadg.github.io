@@ -21,101 +21,35 @@
 
 </head>
 <body>
-
   <header>
-    <div class="header-top">
-      <a id="icon-wrapper">
-        <div class="icon">
-          <div id="icon-menu" class="icon-menu"></div>
-        </div>
-      </a>
-    </div>
-    <!-- menu -->
     <nav>
-      <ul id="menu">
-        <li>
-          <a data-smooth-scroll href="#inicio" title="Inicio">inicio</a>
-        </li>
-        <li>
-          <a data-smooth-scroll href="#sobreMi" title="Sobre Mí">sobre mí</a>
-        </li>
-        <li>
-          <a data-smooth-scroll href="#proyectos" title="Proyectos">proyectos</a>
-        </li>
-        <li>
-          <a data-smooth-scroll href="#contacto" title="Contacto">contacto</a>
-        </li>
+      <section class="logo-wrapper">
+        <a href="index.html" class="logo">
+          <img src="img/logo.svg" alt="Logo personal">
+        </a>
+      </section>
+      <div class="icon-wrapper">
+        <div class="icon"></div>
+      </div>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
       </ul>
     </nav>
   </header>
-  <!-- secciones -->
-  <div class="sections">
-    <!-- inicio -->
-    <section id="inicio" class="vertical-scrolling">
-      <section class="nombre">
-        <h1>Luciana Arévalo</h1>
-        <h2>Diseñadora gráfica &</h2>
-        <h2>Desarrolladora Front End</h2>
-        <p>en progreso</p>
-      </section>
-      <a class="arrow" href="#sobreMi">
-        <i class="material-icons">keyboard_arrow_down</i>
-        <i class="material-icons">keyboard_arrow_down</i>
-      </a>
-      <section class="redes">
-          <a href="https://www.linkedin.com/in/arevalolucianadg/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/arevalolucianadg" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://codepen.io/arevalolucianadg/" target="_blank"><i class="fab fa-codepen"></i></a>
-          <a href="https://www.behance.net/arevalolucianadg" target="_blank"><i class="fab fa-behance"></i></a>
-      </section>
+  <main>
+    <section class="nombre">
+      <h1>Luciana Arévalo</h1>
+      <h2>Diseñadora gráfica & <br> Desarrolladora Front End</h2>
+      <p class="detalle">en progreso</p>
     </section>
-    <!-- sobre mi -->
-    <section id="sobreMi" class="vertical-scrolling">
-      
-    </section>
-    <!-- proyectos -->
-    <section id="proyectos" class="vertical-scrolling">
-      
-    </section>
-    <!-- contacto -->
-    <section id="contacto" class="vertical-scrolling">
-      <footer>
-        <section class="legales">Arévalo Luciana | 2019</section>
-      </footer>
-    </section>
-  </div>
+    <section class="portada"></section>
+    <section class="sidebar"></section>
+  </main>
   
+  <!-- script -->
   <script src="https://kit.fontawesome.com/9db69aa1a4.js"></script>
-  <script src="js/smooth-scroll.min.js"></script>
-
-  <script>
-    // menu
-    var iconWrapper = document.getElementById("icon-wrapper");
-    var iconMenu = document.getElementById("icon-menu");
-    var menu = document.getElementById("menu");
-    var itemsMenu = menu.getElementsByTagName("li");
-
-    function openMenu(){
-      iconMenu.classList.toggle("animate");
-      menu.classList.toggle("open");
-      }
-        iconWrapper.onclick = function() {
-          openMenu();
-        }
-        for(i = 0; i < itemsMenu.length; i++){
-            var item = itemsMenu[i];
-            item.onclick = function() {
-              openMenu();
-            }
-          };
-
-    // smooth scroll JS
-    new Smoothscroll({
-        duration: 500, 
-        easing: 'easeInOutQuad'
-    })
-  </script>
-
+  
 
 </body>
 </html>

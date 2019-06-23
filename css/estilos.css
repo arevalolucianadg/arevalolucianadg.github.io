@@ -284,9 +284,7 @@ nav ul li a{
         font-size: 2.78rem;
         font-weight: 600;
     }
-    #inicio .nombre h2:nth-last-child(2){
-        /* font-weight: 700; */
-    }
+    
     #inicio .nombre p{
         font-size: 1.5rem;
         padding-right: 3px;
