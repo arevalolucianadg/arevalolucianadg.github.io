@@ -24,7 +24,7 @@ a
 
 /* ---- header ---- */
 nav
-    box-shadow: 0px 3px 9px -1px rgba(112,112,112,0.25)
+    background-color: $white
     height: 60px
     position: fixed
     width: 100%
@@ -32,10 +32,10 @@ nav
 
     section.logo-wrapper
         background-color: $yellow
-        height: 70px
-        left: 10%
+        height: 60px
+        left: 5%
         position: relative
-        width: 70px
+        width: 60px
 
         a
             display: flex
@@ -54,18 +54,18 @@ nav
         justify-content: center
         height: 60px
         position: absolute
-        right: 5%
+        right: 10%
         top: 0
-        width: 60px
+        width: $bar-width
         z-index: 500
 
         .icon, .icon:before, .icon:after
-            background: $lightGrey
+            background: rgba(112, 112, 112,1)
             content: ""
-            height: 2.95px
+            height: $bar-height
             position: absolute
-            transition: all .5s ease
-            width: 30px
+            transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1)
+            width: $bar-width
 
         &:hover
             .icon
@@ -77,31 +77,31 @@ nav
                     transition: all .25s ease
         
         .icon
+
             &:before
-                top: -10px
+                bottom: $bar-spacing
+                transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
                 transition: all .5s ease
             
             &:after
-                top: 10px
-                transition: all .5s ease
+                top: $bar-spacing
+                transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
 
             &.animate
-                transition: all .5s ease
-                height: 0
+                background: rgba(112, 112, 112,0)
+                transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1)
 
                 &:before, &:after
                     background-color: $white
-                    transition: all .5s ease
 
                 &:before 
-                    top: 10px
-                    transform: rotate(45deg)
-                    transition: all .5s ease
+                    top: 7px
+                    transform: rotate(-45deg)
+                    transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
                 
                 &:after
-                    top: 10px
-                    transform: rotate(-45deg)
-                    transition: all .5s ease
+                    transform: rotate(45deg)
+                    transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
                 
 
     ul#menu
@@ -163,147 +163,192 @@ nav
 
 /* ---- home ---- */
 main
-    align-items: center
-    display: flex
-    flex-direction: column
-    justify-content: center
-    height: calc(100vh - 60px)
-    overflow: hidden
     position: relative
     top: 60px
 
-    section.nombre
+    section#home
+        align-items: center
         display: flex
         flex-direction: column
         justify-content: center
-        height: 50vh
-        margin: 0 auto
-        position: absolute
-        width: 80%
-        z-index: 50
+        height: calc(100vh - 60px)
+        width: 100%
 
-        h1
-            color: $black
+        section.nombre
             display: flex
             flex-direction: column
-            font-size: 2.25em
             justify-content: center
-            margin-bottom: 10px
-            position: relative
+            height: 50vh
+            left: 7.5%
+            margin: 0 auto
+            position: absolute
+            top: 15vh
+            width: 90%
+            z-index: 50
 
+            
             &:before
                 background: $white
                 content: ""
                 height: 180px
-                left: -20px
                 opacity: .9
                 position: absolute
-                top: -20px
-                width: 290px
+                top: 30px
+                width: 92.5%
                 z-index: -5
-        
-        h2
-            color: $lightGrey 
-            font-size: 1.5rem
-            font-weight: 300
-        
-        p.detalle
-            color: $lightGrey
-            font-weight: 300
 
-    button.btn 
-        border: none
-        cursor: pointer
-        font-family: 'Source Sans Pro', sans-serif
-        font-size: 1rem 
-        font-weight: 700
-        letter-spacing: 6px
-        margin: 0 auto
-        padding: .5rem
-        transition: all .5s ease
-        width: 150px
+            h1
+                color: $black
+                display: flex
+                flex-direction: column
+                font-size: 2.25em
+                justify-content: center
+                margin-bottom: 10px
+                position: relative
+            
+            h2
+                color: $lightGrey 
+                font-size: 1.35rem
+                font-weight: 300
+            
+                span
+                    font-size: 1.2rem
+                    text-transform: uppercase
+                    
 
-        &.cv
-            background: $yellow
-            background: $gradYellow
-            color: $white
-            margin-top: 50px
-            text-transform: uppercase
+        a.btn 
+            border: none
+            cursor: pointer
+            font-family: 'Source Sans Pro', sans-serif
+            font-size: 1rem 
+            font-weight: 700
+            letter-spacing: 6px
+            margin: 0 auto
+            padding: .5rem
             transition: all .5s ease
-        
-        &:hover
-            background: $red
-            box-shadow: 0px 0px 10px -1px rgba(121,32,132,.5)
-            color: $white
-            transition: all .5s ease
+            width: 150px
 
-        &:focus
-            outline: none
+            &.primary
+                background: $yellow
+                color: $white
+                position: relative
+                top: 12.5vh
+                text-align: center
+                text-transform: uppercase
+                transition: all .5s ease
+            
+            &:hover
+                background: $red
+                box-shadow: 0px 0px 10px -1px rgba(121,32,132,.5)
+                color: $white
+                transition: all .5s ease
 
-    section.portada
-        border-radius: 5px
-        height: 70vh
-        margin: 0 auto
-        position: absolute
-        right: 20px
-        top: 50px
-        width: 55%
+            &:focus
+                outline: none
 
-        .img-wrapper
-            height: 100%
-            width: 100%
-
-            img
-                height: 100%
-        
-        .bg-img
-            background: $gradRed
-            height: 100%
-            opacity: .85
+        section.portada
+            border-radius: 0px 0px 0px 25px
+            height: 70vh
+            margin: 0 auto
+            overflow: hidden
             position: absolute
-            top: 0
-            width: 150%
-                
+            right: 0
+            top: 50px
+            width: 55%
 
-    section.sidebar
-        display: none
+            .img-wrapper
+                height: 100%
+                width: 100%
 
-/* ---- sobreMi ---- */
+                img
+                    height: 100%
+            
+            .bg-img
+                background: $gradRed
+                height: 100%
+                opacity: .85
+                position: absolute
+                top: 0
+                width: 150%
+                    
+
+        section.sidebar
+            display: none
 
 
-/* ---- proyectos ---- */
+    section#proyectos
+        height: 100vh
+        margin: 0 auto
+        padding-top: 10vh
+        width: 90%
 
+        h3
+            color: $lightGrey
+            font-size: 1rem
+            font-weight: 600
+            margin-top: 7.5vh
+            letter-spacing: 5px
+            opacity: 0.75
+            text-align: center
+            text-transform: uppercase
 
-/* ---- contacto ---- */
-
+    section#contacto
+        height: 100vh
+        margin: 0 auto
+        padding-top: 10vh
+        width: 90%
+        
+        h3
+            color: $lightGrey
+            font-size: 1rem
+            font-weight: 600
+            margin-top: 7.5vh
+            letter-spacing: 5px
+            opacity: 0.75
+            text-align: center
+            text-transform: uppercase
 
 
   
 
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px)
-    main 
-        section.nombre 
+    nav 
+        section.logo-wrapper
             left: 10%
-            width: 40%
+    main
+        margin: 0 auto 
+        width: 87.5%
 
-            h1 
-                font-size: 4rem
-            
-            h2 
-                font-size: 2.7rem
+        section#home
+            section.nombre 
+                left: 10%
+                width: 40%
 
-            .detalle
-                font-size: 1.5rem
+                &:before
+                    width: 50%
 
-            .btn
+                h1 
+                    font-size: 4rem
+                
+                h2 
+                    font-size: 2.5rem
 
-                .cv
-                    position: relative
-                    top: 50px
+                    span 
+                        font-size: 1.75rem
 
-        section.portada 
-            height: 90vh
-            right: 7.5%
-            width: 33%
-   
+                a.btn
+                    .primary
+                        position: relative
+                        top: 50px
+
+            section.portada 
+                border-radius: 0px
+                height: calc(100vh - 60px - 50px)
+                right: 0
+                width: 40%
+
+                img
+                    height: auto
+                    width: 100%
+    

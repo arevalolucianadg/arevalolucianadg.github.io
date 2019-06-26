@@ -43,8 +43,7 @@ a {
 
 /* ---- header ---- */
 nav {
-  -webkit-box-shadow: 0px 3px 9px -1px rgba(112, 112, 112, 0.25);
-          box-shadow: 0px 3px 9px -1px rgba(112, 112, 112, 0.25);
+  background-color: #FFFFFF;
   height: 60px;
   position: fixed;
   width: 100%;
@@ -53,10 +52,10 @@ nav {
 
 nav section.logo-wrapper {
   background-color: #febb2a;
-  height: 70px;
-  left: 10%;
+  height: 60px;
+  left: 5%;
   position: relative;
-  width: 70px;
+  width: 60px;
 }
 
 nav section.logo-wrapper a {
@@ -91,19 +90,19 @@ nav div#icon-wrapper {
           justify-content: center;
   height: 60px;
   position: absolute;
-  right: 5%;
+  right: 10%;
   top: 0;
-  width: 60px;
+  width: 30px;
   z-index: 500;
 }
 
 nav div#icon-wrapper .icon, nav div#icon-wrapper .icon:before, nav div#icon-wrapper .icon:after {
   background: #707070;
   content: "";
-  height: 2.95px;
+  height: 3px;
   position: absolute;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
   width: 30px;
 }
 
@@ -120,43 +119,50 @@ nav div#icon-wrapper:hover .icon:after {
 }
 
 nav div#icon-wrapper .icon:before {
-  top: -10px;
+  bottom: 10px;
+  -webkit-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
 
 nav div#icon-wrapper .icon:after {
   top: 10px;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav div#icon-wrapper .icon.animate {
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  height: 0;
+  background: rgba(112, 112, 112, 0);
+  -webkit-transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav div#icon-wrapper .icon.animate:before, nav div#icon-wrapper .icon.animate:after {
   background-color: #FFFFFF;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
 }
 
 nav div#icon-wrapper .icon.animate:before {
-  top: 10px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  top: 7px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav div#icon-wrapper .icon.animate:after {
-  top: 10px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 nav ul#menu {
@@ -243,6 +249,11 @@ nav ul#menu.open {
 
 /* ---- home ---- */
 main {
+  position: relative;
+  top: 60px;
+}
+
+main section#home {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -257,12 +268,10 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   height: calc(100vh - 60px);
-  overflow: hidden;
-  position: relative;
-  top: 60px;
+  width: 100%;
 }
 
-main section.nombre {
+main section#home section.nombre {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -274,13 +283,26 @@ main section.nombre {
       -ms-flex-pack: center;
           justify-content: center;
   height: 50vh;
+  left: 7.5%;
   margin: 0 auto;
   position: absolute;
-  width: 80%;
+  top: 15vh;
+  width: 90%;
   z-index: 50;
 }
 
-main section.nombre h1 {
+main section#home section.nombre:before {
+  background: #FFFFFF;
+  content: "";
+  height: 180px;
+  opacity: .9;
+  position: absolute;
+  top: 30px;
+  width: 92.5%;
+  z-index: -5;
+}
+
+main section#home section.nombre h1 {
   color: #252525;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -297,30 +319,18 @@ main section.nombre h1 {
   position: relative;
 }
 
-main section.nombre h1:before {
-  background: #FFFFFF;
-  content: "";
-  height: 180px;
-  left: -20px;
-  opacity: .9;
-  position: absolute;
-  top: -20px;
-  width: 290px;
-  z-index: -5;
-}
-
-main section.nombre h2 {
+main section#home section.nombre h2 {
   color: #707070;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 300;
 }
 
-main section.nombre p.detalle {
-  color: #707070;
-  font-weight: 300;
+main section#home section.nombre h2 span {
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
-main button.btn {
+main section#home a.btn {
   border: none;
   cursor: pointer;
   font-family: 'Source Sans Pro', sans-serif;
@@ -334,17 +344,18 @@ main button.btn {
   width: 150px;
 }
 
-main button.btn.cv {
+main section#home a.btn.primary {
   background: #febb2a;
-  background: linear-gradient(135deg, #febb2a 0%, #e85b27 100%);
   color: #FFFFFF;
-  margin-top: 50px;
+  position: relative;
+  top: 12.5vh;
+  text-align: center;
   text-transform: uppercase;
   -webkit-transition: all .5s ease;
   transition: all .5s ease;
 }
 
-main button.btn:hover {
+main section#home a.btn:hover {
   background: #E62048;
   -webkit-box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
           box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
@@ -353,30 +364,31 @@ main button.btn:hover {
   transition: all .5s ease;
 }
 
-main button.btn:focus {
+main section#home a.btn:focus {
   outline: none;
 }
 
-main section.portada {
-  border-radius: 5px;
+main section#home section.portada {
+  border-radius: 0px 0px 0px 25px;
   height: 70vh;
   margin: 0 auto;
+  overflow: hidden;
   position: absolute;
-  right: 20px;
+  right: 0;
   top: 50px;
   width: 55%;
 }
 
-main section.portada .img-wrapper {
+main section#home section.portada .img-wrapper {
   height: 100%;
   width: 100%;
 }
 
-main section.portada .img-wrapper img {
+main section#home section.portada .img-wrapper img {
   height: 100%;
 }
 
-main section.portada .bg-img {
+main section#home section.portada .bg-img {
   background: linear-gradient(135deg, #e62048 0%, #792084 100%);
   height: 100%;
   opacity: .85;
@@ -385,36 +397,84 @@ main section.portada .bg-img {
   width: 150%;
 }
 
-main section.sidebar {
+main section#home section.sidebar {
   display: none;
 }
 
-/* ---- sobreMi ---- */
-/* ---- proyectos ---- */
-/* ---- contacto ---- */
+main section#proyectos {
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 10vh;
+  width: 90%;
+}
+
+main section#proyectos h3 {
+  color: #707070;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 7.5vh;
+  letter-spacing: 5px;
+  opacity: 0.75;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+main section#contacto {
+  height: 100vh;
+  margin: 0 auto;
+  padding-top: 10vh;
+  width: 90%;
+}
+
+main section#contacto h3 {
+  color: #707070;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 7.5vh;
+  letter-spacing: 5px;
+  opacity: 0.75;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px) {
-  main section.nombre {
+  nav section.logo-wrapper {
+    left: 10%;
+  }
+  main {
+    margin: 0 auto;
+    width: 87.5%;
+  }
+  main section#home section.nombre {
     left: 10%;
     width: 40%;
   }
-  main section.nombre h1 {
+  main section#home section.nombre:before {
+    width: 50%;
+  }
+  main section#home section.nombre h1 {
     font-size: 4rem;
   }
-  main section.nombre h2 {
-    font-size: 2.7rem;
+  main section#home section.nombre h2 {
+    font-size: 2.5rem;
   }
-  main section.nombre .detalle {
-    font-size: 1.5rem;
+  main section#home section.nombre h2 span {
+    font-size: 1.75rem;
   }
-  main section.nombre .btn .cv {
+  main section#home section.nombre a.btn .primary {
     position: relative;
     top: 50px;
   }
-  main section.portada {
-    height: 90vh;
-    right: 7.5%;
-    width: 33%;
+  main section#home section.portada {
+    border-radius: 0px;
+    height: calc(100vh - 60px - 50px);
+    right: 0;
+    width: 40%;
+  }
+  main section#home section.portada img {
+    height: auto;
+    width: 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
