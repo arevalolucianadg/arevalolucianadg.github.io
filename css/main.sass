@@ -292,9 +292,10 @@ main
 
             &:after
                 background: $white
+                border-radius: 3px
                 bottom: -14px
                 content: ""
-                height: 6px
+                height: 8px
                 left: 0
                 position: absolute
                 width: 25%
@@ -344,7 +345,7 @@ main
                     top: 0
 
                 &.secondary
-                    border: 2px solid $yellow
+                    border: 2px solid $darkGrey
                     color: $darkGrey
                     font-weight: 600
                     letter-spacing: 1px
@@ -352,8 +353,8 @@ main
                     text-transform: uppercase
 
                     &:hover
-                        background: $yellow
-                        box-shadow: 0px 0px 10px -1px rgba(0,0,0,.5)
+                        background: $darkGrey
+                        box-shadow: 0px 0px 10px -1px rgba(0,0,0,.25)
                         color: $white
                         transition: all .5s ease
 
@@ -449,7 +450,7 @@ footer
 
             a
                 img 
-                    width: 70%
+                    width: 68%
 
         div#icon-wrapper
             display: none
@@ -526,12 +527,56 @@ footer
             
             section.habilidades 
                 height: 80vh
-                padding: 10% 10% 5%  
+                padding: 8% 10% 5%  
                 width: 50%
+
+                h5
+                    margin-top: 7.5%
             
             section.botones 
-                padding: 5% 0
+                padding: 7.5% 0
                 width: 50%
 
                 a.btn 
-                    margin: 0
+
+                    &.primary
+                        margin: 0
+
+        section#proyectos
+
+        section#contacto
+            display: flex
+            flex-wrap: wrap
+            height: 50px
+            padding: 3vh 0
+            position: relative
+
+            h3 
+                color: $yellow
+                font-size: 2.5rem
+                font-weight: 700
+                opacity: 1
+                position: absolute
+                top: -12.5vh
+                width: 100%
+
+            section.email
+                height: 60px
+                margin-top: 5%
+                width: 50%
+
+                a 
+                    font-size: 1.5rem
+            
+            section.redes 
+                height: 60px
+                margin-top: 5%
+                width: 30%
+        
+    footer 
+        height: 50px
+        margin: 0 auto 
+        width: 87.5%
+
+        p 
+            margin: 0 auto 
