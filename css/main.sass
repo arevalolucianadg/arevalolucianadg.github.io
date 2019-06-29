@@ -27,6 +27,7 @@ nav
     background-color: $white
     height: 60px
     position: fixed
+    top: 0
     width: 100%
     z-index: 250
 
@@ -155,10 +156,9 @@ nav
             transition: all .75s ease
 
 
-/* ---- home ---- */
+/* ---- main ---- */
 main
     position: relative
-    top: 60px
 
     section#home
         align-items: center
@@ -166,6 +166,7 @@ main
         flex-direction: column
         justify-content: center
         height: calc(100vh - 60px)
+        margin-top: 10vh
         width: 100%
 
         section.nombre
@@ -268,6 +269,7 @@ main
         &:focus
             outline: none
 
+
     section#sobremi
         margin: 0 auto
         padding-top: 10vh
@@ -303,22 +305,57 @@ main
             text-transform: uppercase
             
         section.habilidades 
-            margin-top: 5vh
             min-height: 650px
             padding: 17.5% 10% 5%
             text-align: center
             width: 100%
 
-        p 
-            display: flex
-            justify-content: space-between
-            margin: 4.5% auto
-            width: 80%
+            h4 
+                color: $red
+                margin-bottom: 15%
 
-        span 
-            font-family: 'FontAwesome'
-            letter-spacing: 2px
-            margin-left: 5%
+            h5
+                color: $red
+                margin-top: 10%
+
+            p 
+                display: flex
+                justify-content: space-between
+                margin: 4.5% auto
+                width: 90%
+
+            span 
+                color: $red
+                font-family: 'FontAwesome'
+                letter-spacing: 2px
+                margin-left: 5%
+
+        section.botones 
+            display: flex
+            min-height: 100px
+            padding: 17.5% 10% 5%
+            text-align: center
+            width: 100%
+
+            a.btn
+                &.primary
+                    letter-spacing: 4px
+                    margin-left: 2%
+                    top: 0
+
+                &.secondary
+                    border: 2px solid $yellow
+                    color: $darkGrey
+                    font-weight: 600
+                    letter-spacing: 1px
+                    margin-right: 2%
+                    text-transform: uppercase
+
+                    &:hover
+                        background: $yellow
+                        box-shadow: 0px 0px 10px -1px rgba(0,0,0,.5)
+                        color: $white
+                        transition: all .5s ease
 
 
     section#proyectos
@@ -337,14 +374,16 @@ main
             text-align: center
             text-transform: uppercase
 
+
     section#contacto
-        height: 100vh
+        background-color: $yellow
         margin: 0 auto
-        padding-top: 10vh
-        width: 90%
+        min-height: 200px
+        padding: 3vh 0
+        width: 100%
         
         h3
-            color: $lightGrey
+            color: $white
             font-size: 1rem
             font-weight: 600
             margin-top: 7.5vh
@@ -353,18 +392,60 @@ main
             text-align: center
             text-transform: uppercase
 
+        section.email 
+            margin-top: 10%
+            text-align: center
+
+            a 
+                color: $white 
+                font-size: 1.15rem
+                letter-spacing: 1.5px
+
+        section.redes 
+            color: $darkGrey
+            font-family: 'FontAwesome'
+            font-size: 1.5rem
+            display: flex
+            justify-content: space-around
+            margin: 10% auto 
+            width: 80%
+
+            p
+                align-items: center
+                background: $white
+                border-radius: 25px
+                box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.2)
+                cursor: pointer
+                display: flex
+                justify-content: center
+                height: 45px
+                text-align: center
+                width: 45px
+
+footer 
+    background: $white
+    min-height: 100px
+    padding: 5% 0
+    position: relative
+    
+    p 
+        bottom: 0
+        font-size: 0.85rem
+        margin: 10% auto
+        text-align: center
+        width: 80%
 
   
 
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px)
     nav 
-        height: 90px
+        height: 84px
 
         section.logo-wrapper
-            height: 90px
+            height: 84px
             left: 10%
-            width: 90px
+            width: 84px
 
             a
                 img 
@@ -416,11 +497,6 @@ main
                     span 
                         font-size: 1.75rem
 
-                a.btn
-                    .primary
-                        position: relative
-                        top: 50px
-
             section.portada 
                 border-radius: 0px
                 height: calc(100vh - 60px - 50px)
@@ -430,4 +506,32 @@ main
                 img
                     height: auto
                     width: 100%
-    
+        
+        a.btn
+            .primary
+                position: relative
+                top: 50px
+
+
+        section#sobremi
+            display: flex
+            flex-wrap: wrap
+            min-height: 100vh
+            padding-top: 0
+
+            section.info 
+                height: 80vh
+                padding: 8% 10% 5%
+                width: 50%
+            
+            section.habilidades 
+                height: 80vh
+                padding: 10% 10% 5%  
+                width: 50%
+            
+            section.botones 
+                padding: 5% 0
+                width: 50%
+
+                a.btn 
+                    margin: 0

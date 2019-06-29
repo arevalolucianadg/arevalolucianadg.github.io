@@ -46,6 +46,7 @@ nav {
   background-color: #FFFFFF;
   height: 60px;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 250;
 }
@@ -241,10 +242,9 @@ nav ul#menu.open {
   transition: all .75s ease;
 }
 
-/* ---- home ---- */
+/* ---- main ---- */
 main {
   position: relative;
-  top: 60px;
 }
 
 main section#home {
@@ -262,6 +262,7 @@ main section#home {
       -ms-flex-pack: center;
           justify-content: center;
   height: calc(100vh - 60px);
+  margin-top: 10vh;
   width: 100%;
 }
 
@@ -435,14 +436,23 @@ main section#sobremi h4 {
 }
 
 main section#sobremi section.habilidades {
-  margin-top: 5vh;
   min-height: 650px;
   padding: 17.5% 10% 5%;
   text-align: center;
   width: 100%;
 }
 
-main section#sobremi p {
+main section#sobremi section.habilidades h4 {
+  color: #e62048;
+  margin-bottom: 15%;
+}
+
+main section#sobremi section.habilidades h5 {
+  color: #e62048;
+  margin-top: 10%;
+}
+
+main section#sobremi section.habilidades p {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,13 +460,48 @@ main section#sobremi p {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 4.5% auto;
-  width: 80%;
+  width: 90%;
 }
 
-main section#sobremi span {
+main section#sobremi section.habilidades span {
+  color: #e62048;
   font-family: 'FontAwesome';
   letter-spacing: 2px;
   margin-left: 5%;
+}
+
+main section#sobremi section.botones {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100px;
+  padding: 17.5% 10% 5%;
+  text-align: center;
+  width: 100%;
+}
+
+main section#sobremi section.botones a.btn.primary {
+  letter-spacing: 4px;
+  margin-left: 2%;
+  top: 0;
+}
+
+main section#sobremi section.botones a.btn.secondary {
+  border: 2px solid #fdad00;
+  color: #707070;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-right: 2%;
+  text-transform: uppercase;
+}
+
+main section#sobremi section.botones a.btn.secondary:hover {
+  background: #fdad00;
+  -webkit-box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 main section#proyectos {
@@ -478,14 +523,15 @@ main section#proyectos h3 {
 }
 
 main section#contacto {
-  height: 100vh;
+  background-color: #fdad00;
   margin: 0 auto;
-  padding-top: 10vh;
-  width: 90%;
+  min-height: 200px;
+  padding: 3vh 0;
+  width: 100%;
 }
 
 main section#contacto h3 {
-  color: #9d9c9c;
+  color: #FFFFFF;
   font-size: 1rem;
   font-weight: 600;
   margin-top: 7.5vh;
@@ -495,15 +541,74 @@ main section#contacto h3 {
   text-transform: uppercase;
 }
 
+main section#contacto section.email {
+  margin-top: 10%;
+  text-align: center;
+}
+
+main section#contacto section.email a {
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  letter-spacing: 1.5px;
+}
+
+main section#contacto section.redes {
+  color: #707070;
+  font-family: 'FontAwesome';
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10% auto;
+  width: 80%;
+}
+
+main section#contacto section.redes p {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #FFFFFF;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 45px;
+  text-align: center;
+  width: 45px;
+}
+
+footer {
+  background: #FFFFFF;
+  min-height: 100px;
+  padding: 5% 0;
+  position: relative;
+}
+
+footer p {
+  bottom: 0;
+  font-size: 0.85rem;
+  margin: 10% auto;
+  text-align: center;
+  width: 80%;
+}
+
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px) {
   nav {
-    height: 90px;
+    height: 84px;
   }
   nav section.logo-wrapper {
-    height: 90px;
+    height: 84px;
     left: 10%;
-    width: 90px;
+    width: 84px;
   }
   nav section.logo-wrapper a img {
     width: 70%;
@@ -560,10 +665,6 @@ main section#contacto h3 {
   main section#home section.nombre h2 span {
     font-size: 1.75rem;
   }
-  main section#home section.nombre a.btn .primary {
-    position: relative;
-    top: 50px;
-  }
   main section#home section.portada {
     border-radius: 0px;
     height: calc(100vh - 60px - 50px);
@@ -573,6 +674,36 @@ main section#contacto h3 {
   main section#home section.portada img {
     height: auto;
     width: 100%;
+  }
+  main a.btn .primary {
+    position: relative;
+    top: 50px;
+  }
+  main section#sobremi {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 0;
+  }
+  main section#sobremi section.info {
+    height: 80vh;
+    padding: 8% 10% 5%;
+    width: 50%;
+  }
+  main section#sobremi section.habilidades {
+    height: 80vh;
+    padding: 10% 10% 5%;
+    width: 50%;
+  }
+  main section#sobremi section.botones {
+    padding: 5% 0;
+    width: 50%;
+  }
+  main section#sobremi section.botones a.btn {
+    margin: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */
