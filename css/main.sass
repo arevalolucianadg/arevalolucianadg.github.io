@@ -1,4 +1,5 @@
 @import sass/_recursos
+@import url("font-awesome.min.css")
 
 /* ---- animation ---- */
 
@@ -328,7 +329,6 @@ main
             span 
                 color: $red
                 font-family: 'FontAwesome'
-                letter-spacing: 2px
                 margin-left: 5%
 
         section.botones 
@@ -411,7 +411,7 @@ main
             margin: 10% auto 
             width: 80%
 
-            p
+            a
                 align-items: center
                 background: $white
                 border-radius: 25px
@@ -423,6 +423,32 @@ main
                 text-align: center
                 width: 45px
 
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4)
+                    &:before
+                        color: $darkGrey
+                        font-size: 1.55rem
+                
+                &:nth-child(1)
+                    &:before
+                        content: "\f0e1"
+
+                &:nth-child(2)
+                    &:before
+                        content: "\f09b"
+                        padding-bottom: 1.5px
+                        
+                &:nth-child(3)
+                    &:before
+                        content: "\f1cb"
+
+                &:nth-child(4)
+                    &:before
+                        content: "\f1b4"
+            
+                &:hover
+                    transform: scale(1.1)
+                    transition: all .15s ease
+
 footer 
     background: $white
     min-height: 100px
@@ -431,6 +457,7 @@ footer
     
     p 
         bottom: 0
+        color: $darkGrey
         font-size: 0.85rem
         margin: 10% auto
         text-align: center

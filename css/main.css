@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
+@import url("font-awesome.min.css");
 /* ---- animation ---- */
 @-webkit-keyframes upLink {
   from {
@@ -467,7 +468,6 @@ main section#sobremi section.habilidades p {
 main section#sobremi section.habilidades span {
   color: #e62048;
   font-family: 'FontAwesome';
-  letter-spacing: 2px;
   margin-left: 5%;
 }
 
@@ -566,7 +566,7 @@ main section#contacto section.redes {
   width: 80%;
 }
 
-main section#contacto section.redes p {
+main section#contacto section.redes a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -586,6 +586,35 @@ main section#contacto section.redes p {
   width: 45px;
 }
 
+main section#contacto section.redes a:nth-child(1):before, main section#contacto section.redes a:nth-child(2):before, main section#contacto section.redes a:nth-child(3):before, main section#contacto section.redes a:nth-child(4):before {
+  color: #707070;
+  font-size: 1.55rem;
+}
+
+main section#contacto section.redes a:nth-child(1):before {
+  content: "\f0e1";
+}
+
+main section#contacto section.redes a:nth-child(2):before {
+  content: "\f09b";
+  padding-bottom: 1.5px;
+}
+
+main section#contacto section.redes a:nth-child(3):before {
+  content: "\f1cb";
+}
+
+main section#contacto section.redes a:nth-child(4):before {
+  content: "\f1b4";
+}
+
+main section#contacto section.redes a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+}
+
 footer {
   background: #FFFFFF;
   min-height: 100px;
@@ -595,6 +624,7 @@ footer {
 
 footer p {
   bottom: 0;
+  color: #707070;
   font-size: 0.85rem;
   margin: 10% auto;
   text-align: center;
