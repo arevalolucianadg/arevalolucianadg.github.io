@@ -525,7 +525,7 @@ main section#proyectos h3 {
 
 main section#contacto {
   background-color: #fdad00;
-  margin: 0 auto;
+  margin: 10vh auto 0;
   min-height: 200px;
   padding: 3vh 0;
   width: 100%;
@@ -639,7 +639,7 @@ footer p {
   nav ul#menu li {
     -webkit-animation: none;
             animation: none;
-    margin-left: 5%;
+    margin-left: 4%;
   }
   nav ul#menu li a {
     color: #707070;

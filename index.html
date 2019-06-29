@@ -35,7 +35,7 @@
         <p class="text">Menú</p>
         <li><a href="#">Inicio</a></li>
         <li><a href="#sobremi">Sobre Mí</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
+        <!-- <li><a href="#proyectos">Proyectos</a></li> -->
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -55,6 +55,8 @@
       </section>
       <section class="sidebar"></section>
     </section>
+
+    <!-- sobreMi -->
     <section id="sobremi">
       <section class="info">
         <h3>Sobre mí</h3>
@@ -101,9 +103,13 @@
         <a href="#" class="btn primary">Ver cv</a>
       </section>
     </section>
-    <section id="proyectos">
+
+    <!-- misProyectos -->
+    <!-- <section id="proyectos">
       <h3>Mis proyectos</h3>
-    </section>
+    </section> -->
+
+    <!-- contacto -->
     <section id="contacto">
       <h3>contacto</h3>
       <section class="email">
@@ -122,21 +128,7 @@
   </footer>
   
   <!-- script -->
-  <script src="https://kit.fontawesome.com/9db69aa1a4.js"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-
-      var iconWrapper = document.getElementById("icon-wrapper"),
-          icon = document.getElementById("icon"),
-          menu = document.getElementById("menu");
-
-      iconWrapper.onclick = function () {
-        icon.classList.toggle("animate");
-        menu.classList.toggle("open");
-      }
-    });
-  </script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
