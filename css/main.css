@@ -51,7 +51,7 @@ nav {
 }
 
 nav section.logo-wrapper {
-  background-color: #febb2a;
+  background-color: #fdad00;
   height: 60px;
   left: 5%;
   position: relative;
@@ -297,7 +297,7 @@ main section#home section.nombre:before {
 }
 
 main section#home section.nombre h1 {
-  color: #252525;
+  color: #333333;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -314,7 +314,7 @@ main section#home section.nombre h1 {
 }
 
 main section#home section.nombre h2 {
-  color: #707070;
+  color: #9d9c9c;
   font-size: 1.35rem;
   font-weight: 300;
 }
@@ -322,44 +322,6 @@ main section#home section.nombre h2 {
 main section#home section.nombre h2 span {
   font-size: 1.2rem;
   text-transform: uppercase;
-}
-
-main section#home a.btn {
-  border: none;
-  cursor: pointer;
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 6px;
-  margin: 0 auto;
-  padding: .5rem;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-  width: 150px;
-}
-
-main section#home a.btn.primary {
-  background: #febb2a;
-  color: #FFFFFF;
-  position: relative;
-  top: 12.5vh;
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-main section#home a.btn:hover {
-  background: #E62048;
-  -webkit-box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
-          box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
-  color: #FFFFFF;
-  -webkit-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-main section#home a.btn:focus {
-  outline: none;
 }
 
 main section#home section.portada {
@@ -395,6 +357,108 @@ main section#home section.sidebar {
   display: none;
 }
 
+main a.btn {
+  border: none;
+  cursor: pointer;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin: 0 auto;
+  padding: .5rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  width: 150px;
+}
+
+main a.btn.primary {
+  background: #fdad00;
+  color: #FFFFFF;
+  position: relative;
+  top: 12.5vh;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main a.btn:hover {
+  background: #e62048;
+  -webkit-box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
+          box-shadow: 0px 0px 10px -1px rgba(121, 32, 132, 0.5);
+  color: #FFFFFF;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main a.btn:focus {
+  outline: none;
+}
+
+main section#sobremi {
+  margin: 0 auto;
+  padding-top: 10vh;
+  width: 100%;
+}
+
+main section#sobremi section.info {
+  background: linear-gradient(135deg, #e62048 0%, #792084 100%);
+  color: #FFFFFF;
+  margin-top: 7.5vh;
+  min-height: 650px;
+  padding: 17.5% 10% 5%;
+  width: 100%;
+}
+
+main section#sobremi h3 {
+  font-size: 2.5rem;
+  letter-spacing: 5px;
+  margin-bottom: 15%;
+  position: relative;
+  text-transform: uppercase;
+}
+
+main section#sobremi h3:after {
+  background: #FFFFFF;
+  bottom: -14px;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  width: 25%;
+}
+
+main section#sobremi h4 {
+  letter-spacing: 1.5px;
+  margin-top: 5%;
+  text-transform: uppercase;
+}
+
+main section#sobremi section.habilidades {
+  margin-top: 5vh;
+  min-height: 650px;
+  padding: 17.5% 10% 5%;
+  text-align: center;
+  width: 100%;
+}
+
+main section#sobremi p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 4.5% auto;
+  width: 80%;
+}
+
+main section#sobremi span {
+  font-family: 'FontAwesome';
+  letter-spacing: 2px;
+  margin-left: 5%;
+}
+
 main section#proyectos {
   height: 100vh;
   margin: 0 auto;
@@ -403,7 +467,7 @@ main section#proyectos {
 }
 
 main section#proyectos h3 {
-  color: #707070;
+  color: #9d9c9c;
   font-size: 1rem;
   font-weight: 600;
   margin-top: 7.5vh;
@@ -421,7 +485,7 @@ main section#contacto {
 }
 
 main section#contacto h3 {
-  color: #707070;
+  color: #9d9c9c;
   font-size: 1rem;
   font-weight: 600;
   margin-top: 7.5vh;
@@ -433,8 +497,48 @@ main section#contacto h3 {
 
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px) {
+  nav {
+    height: 90px;
+  }
   nav section.logo-wrapper {
+    height: 90px;
     left: 10%;
+    width: 90px;
+  }
+  nav section.logo-wrapper a img {
+    width: 70%;
+  }
+  nav div#icon-wrapper {
+    display: none;
+  }
+  nav ul#menu {
+    background: transparent;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    height: 90px;
+    left: 6.25%;
+    margin: 0 auto;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+    width: 87.5%;
+  }
+  nav ul#menu p.text {
+    display: none;
+  }
+  nav ul#menu li {
+    -webkit-animation: none;
+            animation: none;
+    margin-left: 5%;
+  }
+  nav ul#menu li a {
+    color: #707070;
+    font-size: 1.15rem;
+    letter-spacing: 1.5px;
   }
   main {
     margin: 0 auto;
