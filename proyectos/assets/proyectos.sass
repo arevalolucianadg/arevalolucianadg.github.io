@@ -16,7 +16,6 @@ main
             height: 100%
 
     .detalle
-        background: $proyecto-uno
         color: $white
         margin: 0 auto
         min-height: 50vh
@@ -24,6 +23,15 @@ main
         position: relative
         top: -15vh
         width: 87.5%
+
+        &.proyectouno
+            background: $proyecto-uno
+        
+        &.proyectodos
+            background: $proyecto-dos
+
+        &.proyectotres
+            background: $proyecto-tres
 
         h1 
             margin-bottom: 15%
@@ -52,7 +60,7 @@ main
         position: relative
         top: -2.5vh
 
-        .fullwidth, .halfwidth
+        .fullwidth, .fullwidth-text, .halfwidth
             width: 100%
 
             img 
@@ -61,26 +69,44 @@ main
             .halfwidth
                 margin-bottom: 10%
 
+                &.text
+                    margin-bottom: 7.5%
+
                 &.img
                     margin-bottom: 0
 
             &.reverse
                 display: flex
                 flex-direction: column-reverse
+                
+            .title
+                font-size: 1.15rem
+                font-weight: 700
+                letter-spacing: 1px
+                margin: 0 auto 7.5% 6.25%
+                text-transform: uppercase
+                width: 65%
 
-        .title
-            color: $proyecto-uno
-            font-size: 1.15rem
-            font-weight: 700
-            letter-spacing: 1px
-            margin: 0 auto 7.5% 6.25%
-            text-transform: uppercase
-            width: 65%
-        
-        .text
-            margin: 0 auto
+            .text
+                margin: 0 auto
+                width: 87.5%
+
+            &.proyectouno
+                .title 
+                    color: $proyecto-uno
+            
+            &.proyectodos
+                .title 
+                    color: $proyecto-dos
+
+            &.proyectotres
+                .title 
+                    color: $proyecto-tres
+
+        .fullwidth-text
+            margin: 10% auto 
             width: 87.5%
-
+        
         h3 
             color: $darkGrey
             font-size: 1rem
@@ -93,11 +119,6 @@ main
         img.imgProject 
             width: 100%
 
-            &.gallery
-                // margin-top: 5vh
-
-            &:nth-child(5)
-                position: relative
 
     .volver
         align-items: center
@@ -124,104 +145,133 @@ main
 
 
 /* ----- responsive design ----- */
-main 
+@media (min-width: 1024px)
+    main 
 
-    .imgWrapper
-        img 
-            height: auto
-            width: 100%
-        
-    @supports(object-fit: cover)
         .imgWrapper
             img 
-                height: 100%
-                object-fit: cover
-                object-position: center center
-    
-    .detalle
-        display: flex
-        padding: 5% 7.5%
-
-        h1
-            font-size: 5rem
-            margin-bottom: 0
-            width: 50%
-
-            &:after
-                height: 10px
-                width: 20%
-
-        p.text 
-            font-size: 1.25rem
-            letter-spacing: 0.25px
-            margin: 3.5% 0
-            position: absolute
-            right: 15%
-            width: 30%
-
-        p.tag  
-            font-size: .95rem
-            font-weight: 600
-            right: 15%
-            top: 65%
-            width: 30%
-
-    .presentacion
-
-        .fullwidth
+                height: auto
+                width: 100%
+            
+        @supports(object-fit: cover)
+            .imgWrapper
+                img 
+                    height: 100%
+                    object-fit: cover
+                    object-position: center center
+        
+        .detalle
             display: flex
+            padding: 5% 7.5%
 
-            &.reverse
-                flex-direction: row
+            h1
+                font-size: 5rem
+                margin-bottom: 0
+                width: 50%
 
-            .halfwidth
-                margin: 0 auto
-                overflow: hidden 
+                &:after
+                    height: 10px
+                    width: 20%
 
-                &.text
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    margin: 0 auto 0 6.25%
-                    width: 30%
+            p.text 
+                font-size: 1.25rem
+                letter-spacing: 0.25px
+                margin: 3.5% 0
+                position: absolute
+                right: 15%
+                width: 30%
 
-                &.img
-                    margin: 0 6.25% 0 auto
-                    width: 50%
+            p.tag  
+                font-size: .95rem
+                font-weight: 600
+                right: 15%
+                top: 65%
+                width: 30%
 
-            &.reverse
-                .text
-                    background: $proyecto-uno
-                    color: $white
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    height: 250px
-                    margin: 0 6.25% 0 auto
+        .presentacion
 
-                    h2.title
-                        color: $white
-                        margin: 20% auto 0 6.25%
-                
-                .img
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    margin: 0 auto 0 6.25%
+            .fullwidth
+                display: flex
 
-            &.gallery
-                margin: 5% auto
-                width: 87.5%
+                &.reverse
+                    flex-direction: row
 
                 .halfwidth
-                    &.img
-                        margin: 0 auto
+                    margin: 0 auto
+                    overflow: hidden 
 
-                        img 
-                            margin: 0
-                            width: 100%
-        
-        img.imgProject
-            margin: 0 6.25%
-            width: 87.5%
+                    &.text
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 0 auto 0 6.25%
+                        width: 30%
+
+                    &.img
+                        margin: 0 6.25% 0 auto
+                        width: 50%
+
+                &.reverse
+                    .text
+                        color: $white
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        height: 250px
+                        margin: 0 6.25% 0 auto
+
+                        h2.title
+                            color: $white
+                            margin: 20% auto 0 6.25%
+                    
+                    .img
+                        display: flex
+                        flex-direction: column
+                        justify-content: center
+                        margin: 0 auto 0 6.25%
+
+                    &.proyectouno
+                        .text
+                            background: $proyecto-uno
+
+                    &.proyectodos
+                        .text
+                            background: $proyecto-dos
+
+                    &.proyectotres
+                        .text
+                            background: $proyecto-tres
+
+                &.gallery
+                    margin: 5% auto
+                    width: 87.5%
+
+                    .halfwidth
+                        &.img
+                            margin: 0 auto
+                            overflow: hidden
+
+                            img 
+                                height: auto
+                                width: 100%
+
+                        @supports(object-fit: cover)
+                            &.img
+                                img 
+                                    height: 100%
+                                    margin: 0
+                                    object-fit: cover
+                                    object-position: center center
+
+            .fullwidth-text
+                text-align: center
+                width: 50%
+
+                h2.title
+                    margin: 0 auto 5%
+                    width: 50%
+            
+            img.imgProject
+                margin: 0 6.25%
+                width: 87.5%
 
