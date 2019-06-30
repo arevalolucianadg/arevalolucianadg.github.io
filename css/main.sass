@@ -6,10 +6,12 @@
 @keyframes upLink
     from
         opacity: 0
-        transform: translateY(20px)
+        transform: translateY(25px)
+        transition: all .5s ease
     to
         opacity: 1
         transform: translateY(0)
+        transition: all .5s ease
 
 *
     box-sizing: border-box
@@ -28,7 +30,9 @@ a
 
 /* ---- header ---- */
 nav
+    align-items: center
     background-color: $white
+    display: flex
     height: 60px
     position: fixed
     top: 0
@@ -37,10 +41,10 @@ nav
 
     section.logo-wrapper
         background-color: $yellow
-        height: 60px
-        left: 5%
+        height: 40px
+        left: 7.5%
         position: relative
-        width: 60px
+        width: 40px
 
         a
             display: flex
@@ -296,7 +300,6 @@ main
 
             &:after
                 background: $white
-                border-radius: 3px
                 bottom: -14px
                 content: ""
                 height: 8px
@@ -471,12 +474,12 @@ footer
 /* ---- responsive breakpoints ---- */
 @media (min-width: 1024px)
     nav 
-        height: 84px
+        height: 10vh
 
         section.logo-wrapper
-            height: 84px
-            left: 10%
-            width: 84px
+            height: 50px
+            left: 6.25%
+            width: 50px
 
             a
                 img 
@@ -489,7 +492,7 @@ footer
             background: transparent
             flex-direction: row
             justify-content: flex-end
-            height: 90px
+            height: 10vh
             left: 6.25%
             margin: 0 auto 
             transform: translateX(0px)

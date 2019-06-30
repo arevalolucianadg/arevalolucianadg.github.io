@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap");
+main {
+  overflow: hidden;
+  width: 100%;
+}
+
+main .imgWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 80vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+main .imgWrapper img {
+  height: 100%;
+}
+
+main .detalle {
+  background: #00529C;
+  color: #FFFFFF;
+  margin: 0 auto;
+  min-height: 50vh;
+  padding: 12.5% 7.5% 10%;
+  position: relative;
+  top: -15vh;
+  width: 87.5%;
+}
+
+main .detalle h1 {
+  margin-bottom: 15%;
+  position: relative;
+}
+
+main .detalle h1:after {
+  background: #FFFFFF;
+  bottom: -14px;
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  width: 25%;
+}
+
+main .detalle p.text {
+  letter-spacing: .75px;
+}
+
+main .detalle p.tag {
+  bottom: 7.5vh;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+main .presentacion {
+  position: relative;
+  top: -2.5vh;
+}
+
+main .presentacion .fullwidth, main .presentacion .halfwidth {
+  width: 100%;
+}
+
+main .presentacion .fullwidth img, main .presentacion .halfwidth img {
+  width: 100%;
+}
+
+main .presentacion .fullwidth .halfwidth, main .presentacion .halfwidth .halfwidth {
+  margin-bottom: 10%;
+}
+
+main .presentacion .fullwidth .halfwidth.img, main .presentacion .halfwidth .halfwidth.img {
+  margin-bottom: 0;
+}
+
+main .presentacion .fullwidth.reverse, main .presentacion .halfwidth.reverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+}
+
+main .presentacion .title {
+  color: #00529C;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0 auto 7.5% 6.25%;
+  text-transform: uppercase;
+  width: 65%;
+}
+
+main .presentacion .text {
+  margin: 0 auto;
+  width: 87.5%;
+}
+
+main .presentacion h3 {
+  color: #707070;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin: 10% auto;
+  text-align: center;
+  text-transform: uppercase;
+  width: 65%;
+}
+
+main .presentacion img.imgProject {
+  width: 100%;
+}
+
+main .presentacion img.imgProject:nth-child(5) {
+  position: relative;
+}
+
+main .volver {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 55px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 7.5vh;
+  width: 100%;
+}
+
+main .volver a {
+  background: #fdad00;
+  -webkit-box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 6px 0px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: .5rem 1rem;
+  text-transform: uppercase;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+main .volver a:hover {
+  background: #e62048;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+/* ----- responsive design ----- */
+main .imgWrapper img {
+  height: auto;
+  width: 100%;
+}
+
+@supports ((-o-object-fit: cover) or (object-fit: cover)) {
+  main .imgWrapper img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+}
+
+main .detalle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5% 7.5%;
+}
+
+main .detalle h1 {
+  font-size: 5rem;
+  margin-bottom: 0;
+  width: 50%;
+}
+
+main .detalle h1:after {
+  height: 10px;
+  width: 20%;
+}
+
+main .detalle p.text {
+  font-size: 1.25rem;
+  letter-spacing: 0.25px;
+  margin: 3.5% 0;
+  position: absolute;
+  right: 15%;
+  width: 30%;
+}
+
+main .detalle p.tag {
+  font-size: .95rem;
+  font-weight: 600;
+  right: 15%;
+  top: 65%;
+  width: 30%;
+}
+
+main .presentacion .fullwidth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .presentacion .fullwidth.reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+main .presentacion .fullwidth .halfwidth {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+main .presentacion .fullwidth .halfwidth.text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto 0 6.25%;
+  width: 30%;
+}
+
+main .presentacion .fullwidth .halfwidth.img {
+  margin: 0 6.25% 0 auto;
+  width: 50%;
+}
+
+main .presentacion .fullwidth.reverse .text {
+  background: #00529C;
+  color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 250px;
+  margin: 0 6.25% 0 auto;
+}
+
+main .presentacion .fullwidth.reverse .text h2.title {
+  color: #FFFFFF;
+  margin: 20% auto 0 6.25%;
+}
+
+main .presentacion .fullwidth.reverse .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto 0 6.25%;
+}
+
+main .presentacion .fullwidth.gallery {
+  margin: 5% auto;
+  width: 87.5%;
+}
+
+main .presentacion .fullwidth.gallery .halfwidth.img {
+  margin: 0 auto;
+}
+
+main .presentacion .fullwidth.gallery .halfwidth.img img {
+  margin: 0;
+  width: 100%;
+}
+
+main .presentacion img.imgProject {
+  margin: 0 6.25%;
+  width: 87.5%;
+}
+/*# sourceMappingURL=proyectos.css.map */
