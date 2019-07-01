@@ -16,4 +16,16 @@ document.addEventListener("DOMContentLoaded", function() {
         icon.classList.remove("animate");
       }
     }
+
+    var minithumb = document.getElementsByClassName("minithumb");
+    var slide = document.getElementById("slide-proyectos");
+
+    for(i=0; i < minithumb.length; i++){
+      minithumb[i].onclick = function () {
+        var value = this.dataset.value;
+        slide.classList.remove(slide.classList);
+        slide.classList.add(value);
+      }
+    }
+
 });
