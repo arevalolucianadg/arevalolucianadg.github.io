@@ -478,7 +478,7 @@ main section#sobremi section.habilidades p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 4.5% auto;
+  margin: 4% auto;
   width: 90%;
 }
 
