@@ -334,7 +334,7 @@ main
 
             span 
                 color: $red
-                font-family: 'FontAwesome'
+                font-family: 'FontAwesome', sans-serif
                 margin-left: 5%
 
         section.botones 
@@ -491,7 +491,15 @@ main
                 width: 33.33%
 
                 img 
+                    filter: brightness(0.75)
                     height: 100%
+                    transition: all .25s ease
+
+                &:hover
+                    img 
+                        filter: brightness(1)
+                        transform: scale(1.2)
+                        transition: all .25s ease
 
 
     section#contacto
@@ -522,7 +530,7 @@ main
 
         section.redes 
             color: $darkGrey
-            font-family: 'FontAwesome'
+            font-family: 'FontAwesome', sans-serif
             font-size: 1.5rem
             display: flex
             justify-content: space-around

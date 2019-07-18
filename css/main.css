@@ -484,7 +484,7 @@ main section#sobremi section.habilidades p {
 
 main section#sobremi section.habilidades span {
   color: #e62048;
-  font-family: 'FontAwesome';
+  font-family: 'FontAwesome', sans-serif;
   margin-left: 5%;
 }
 
@@ -695,7 +695,20 @@ main section#proyectos .thumbs .minithumb {
 }
 
 main section#proyectos .thumbs .minithumb img {
+  -webkit-filter: brightness(0.75);
+          filter: brightness(0.75);
   height: 100%;
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
+}
+
+main section#proyectos .thumbs .minithumb:hover img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: all .25s ease;
+  transition: all .25s ease;
 }
 
 main section#contacto {
@@ -730,7 +743,7 @@ main section#contacto section.email a {
 
 main section#contacto section.redes {
   color: #707070;
-  font-family: 'FontAwesome';
+  font-family: 'FontAwesome', sans-serif;
   font-size: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
