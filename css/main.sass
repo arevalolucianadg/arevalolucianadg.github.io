@@ -175,6 +175,7 @@ main
         justify-content: center
         height: calc(100vh - 60px)
         margin-top: 10vh
+        position: relative
         width: 100%
 
         section.nombre
@@ -589,6 +590,11 @@ footer
         text-align: center
         width: 80%
 
+        a
+            color: $darkGrey
+            font-weight: bold
+
+
   
 
 /* ---- responsive breakpoints ---- */
@@ -629,6 +635,30 @@ footer
                     color: $darkGrey
                     font-size: 1rem
                     letter-spacing: 1.5px
+
+                    display: inline-block
+                    padding: 15px 0
+                    position: relative
+
+                    &:before
+                        border-bottom: 4px solid $yellow
+                        content: ""
+                        display: inline-block
+                        height: calc(70% - 8px)
+                        left: 0
+                        opacity: 0
+                        position: absolute
+                        right: 0
+                        width: 100%
+                        z-index: -1
+
+                        transform: scaleX(1)
+                        transition: opacity .5s ease-in-out, transform .35s linear
+
+                    &:hover:before, &:focus:before
+                        opacity: 1
+                        transform: scaleX(.5)
+
 
     main
         margin: 0 auto 
